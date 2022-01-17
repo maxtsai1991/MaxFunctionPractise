@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.demo.jsonpersoncat">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".JsonpersoncatApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Jsonpersoncat">
+        <activity
+            android:name=".RecyclerViewStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ParkingInfoRetrofitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoomStethoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BatteryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CodeTestDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RetrofitTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LayoutTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_layout_test"
+            android:theme="@style/Theme.Jsonpersoncat.NoActionBar" />
+        <activity
+            android:name=".DialogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerCardViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RelativeTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Switch2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".SwitchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GsonJsonTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Main2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeMainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">jsonpersoncat</string>
+    <string name="intent_return_url">https://xnfood.com.tw/android-intent-bundle/#skill_01</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="shop">
+        <item>50嵐</item>
+        <item>茶湯會</item>
+        <item>米克夏</item>
+        <item>清新</item>
+    </string-array>
+
+    <string-array name="drinks">
+        <item>綠茶</item>
+        <item>紅茶</item>
+        <item>奶茶</item>
+        <item>咖啡</item>
+    </string-array>
+
+    <string-array name="booklist">
+        <item>突破困境</item>
+        <item>大話AWS雲端架構</item>
+        <item>為你自己學Git</item>
+        <item>無瑕的程式碼 Kong</item>
+        <item>大話設計模式</item>
+        <item>敏捷軟體開發技巧守則</item>
+        <item>iOS App 程式開發實務攻略</item>
+        <item>獨角獸專案</item>
+        <item>PowerShell</item>
+        <item>機器學習的數學基礎</item>
+        <item>test</item>
+    </string-array>
+
+    <string name="Common_Nangang">南港</string>
+    <string name="Common_Taipei">台北</string>
+    <string name="Common_Banqiao">板橋</string>
+    <string name="Common_Taoyuan">桃園</string>
+    <string name="Common_Hsinchu">新竹</string>
+    <string name="Common_Miaoli">苗栗</string>
+    <string name="Common_Taichung">台中</string>
+    <string name="Common_Changhua">彰化</string>
+    <string name="Common_Yunlin">雲林</string>
+    <string name="Common_Chiayi">嘉義</string>
+    <string name="Common_Tainan">台南</string>
+    <string name="Common_Zuoying">左營</string>
+
+    <string name="StartStation">起站</string>
+    <string name="EndStation">迄站</string>
+    <string name="title_activity_layout_test">LayoutTestActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

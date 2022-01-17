@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="select_station_spinner_list">
+        <item>@string/Common_Nangang</item>
+        <item>@string/Common_Taipei</item>
+        <item>@string/Common_Banqiao</item>
+        <item>@string/Common_Taoyuan</item>
+        <item>@string/Common_Hsinchu</item>
+        <item>@string/Common_Miaoli</item>
+        <item>@string/Common_Taichung</item>
+        <item>@string/Common_Changhua</item>
+        <item>@string/Common_Yunlin</item>
+        <item>@string/Common_Chiayi</item>
+        <item>@string/Common_Tainan</item>
+        <item>@string/Common_Zuoying</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CodeTestDemoActivity">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="各類程式碼紀錄區"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/bt_return_codedemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回首頁"/>
+
+    <Button
+        android:id="@+id/bt_viewbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="顯示" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_view_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="程式碼說明區" />
+
+            <ImageView
+                android:id="@+id/iv_code_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_viewblock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="顯示區" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
