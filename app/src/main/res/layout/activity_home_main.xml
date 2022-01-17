@@ -211,7 +211,7 @@
                 android:text="RecyclerViewTest" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/bt_StudentRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="studentrecycleview" />
