@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,8 +25,10 @@ import java.util.HashMap;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
     ArrayList<HashMap<String,String>> arrayList = new ArrayList<>();
+    private View mView;
 
-
+    public StudentAdapter() {
+    }
 
     public StudentAdapter(ArrayList<HashMap<String, String>> arrayList) {
         this.arrayList = arrayList;
@@ -38,12 +41,15 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
         // 在VIEWHOLDER內加入我們每個物件(item)
         private TextView tvId, tvSub1, tvSub2, tvAvg;
+        private View mView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.textView_Id); //座位流水號
             tvSub1 = itemView.findViewById(R.id.textView_sub1); // 科目1 : 分數為亂數
             tvSub2 = itemView.findViewById(R.id.textView_sub2); // 科目2 : 分數為亂數
             tvAvg = itemView.findViewById(R.id.textView_avg);   // 平均分 : (科目1 + 科目2) / 2
+            mView = itemView; // 資料型態為View 把這個View跟底下ViewHolder的View綁再一起
         }
 
     }
@@ -94,6 +100,14 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             holder.tvSub1.setText(arrayList.get(position).get("Sub1"));
             holder.tvSub2.setText(arrayList.get(position).get("Sub2"));
             holder.tvAvg.setText(arrayList.get(position).get("Avg"));
+            // Item點擊事件
+            holder.mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 點擊item 彈出 吐司 科目1 & 科目2 & 平均分數
+                    Toast.makeText(v.getContext(), "科目1 : " + holder.tvSub1.getText() + ",\n" + "科目2 : " + holder.tvSub2.getText() + ",\n" + " 平均分數 : "+ holder.tvAvg.getText() ,Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

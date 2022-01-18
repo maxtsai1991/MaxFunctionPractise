@@ -52,6 +52,12 @@ public class HomeMainActivity extends AppCompatActivity {
 
 
     private void initView() {
+            /*
+                Fragment 跳轉 Activity
+                Intent intent = new Intent(getActivity(),FragmentTwoActivity.class);
+                startActivity(intent);
+             */
+        
         // reference intent_return_url
         bt_json_catnum_name_click.setOnClickListener(new View.OnClickListener() {
             @Override

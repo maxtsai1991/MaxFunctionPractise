@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Build;
@@ -24,8 +25,11 @@ import java.util.Random;
 
     /*
     參考網址: https://thumbb13555.pixnet.net/blog/post/311803031
+    RecycleView 下拉刷新及點擊事件 : https://thumbb13555.pixnet.net/blog/post/312844960-android-studio-%E4%B9%8B%E5%9F%BA%E6%9C%ACrecycleview-%E7%94%A8%E6%B3%95-2--%E5%9F%BA%E6%9C%AC%E7%89%88%E4%B8%8B
+    RecycleView 上下滑動排序與側滑刪除 : https://thumbb13555.pixnet.net/blog/post/316420566-recyclerview-swipe
     Github:https://github.com/thumbb13555/SimpleRecycleViewExample
     Github(activity_main.xml & recycle_item.xml):https://github.com/thumbb13555/SimpleRecycleViewExample/tree/master/app/src/main/res/layout
+    Github(RecyclerViewSwipeDelete):https://github.com/thumbb13555/RecyclerViewSwipeDelete
     官方範例:https://developer.android.com/guide/topics/ui/layout/recyclerview
     色卡的網站:https://nipponcolors.com/
     1.以迴圈的方法產生30人(亦可於程式調整)的成績數值
@@ -45,7 +49,9 @@ import java.util.Random;
 public class RecyclerViewStudentActivity extends AppCompatActivity {
     public Button bt_return_home;
     public RecyclerView mRecyclerView;
-    public StudentAdapter myStudentAdapter;
+//    public StudentAdapter myStudentAdapter; // 如用靜態adapter 就會用到它
+    public StudentAdapter studentAdapter ;
+    public SwipeRefreshLayout swipeRefreshLayout;
     public ArrayList<HashMap<String,String>>arrayList = new ArrayList<>();
 
     @Override
@@ -63,18 +69,8 @@ public class RecyclerViewStudentActivity extends AppCompatActivity {
             }
         });
 
-        //製造生成假資料 : 迴圈跑30次表示30個學生
-        for (int i = 0;i<30;i++){
-            HashMap<String,String> hashMap = new HashMap<>();
-            hashMap.put("Id","座號："+String.format("%02d",i+1)); // String.format("%02d",i+1)是讓字串補零的方法
-            hashMap.put("Sub1",String.valueOf(new Random().nextInt(80) + 20));
-            hashMap.put("Sub2",String.valueOf(new Random().nextInt(80) + 20));
-            hashMap.put("Avg",String.valueOf(
-                    (Integer.parseInt(hashMap.get("Sub1"))
-                            +Integer.parseInt(hashMap.get("Sub2")))/2));
-
-            arrayList.add(hashMap);
-        }
+        //製造資料
+        makeData();
 
         //設置RecycleView
         mRecyclerView = findViewById(R.id.recycleview);
@@ -83,7 +79,38 @@ public class RecyclerViewStudentActivity extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         // new出adapter物件 塞學生假資料 給RecyclerView
         mRecyclerView.setAdapter(new StudentAdapter(arrayList));
+
+        // 因adapter 拆出去一個class才需要寫這段
+        studentAdapter = new StudentAdapter();
+
+        //下拉刷新
+        swipeRefreshLayout = findViewById(R.id.refreshLayout);
+        // 設定刷新圈圈的顏色
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.green_TOKIWA));
+        swipeRefreshLayout.setOnRefreshListener(()->{
+            // 資料清空(清除表單資料)
+            arrayList.clear();
+            // 載入資料(呼叫假資料)
+            makeData();
+            // 通知Adapter資料有被改變 (Adapter 刷新)
+            studentAdapter.notifyDataSetChanged();
+            // 清除轉圈圈 (讓刷新的圈圈消滅方法)
+            swipeRefreshLayout.setRefreshing(false);
+        });
     }
+        //製造生成假資料 : 迴圈跑30次表示30個學生
+        private void makeData() {
+            for (int i = 0;i<30;i++){
+                HashMap<String,String> hashMap = new HashMap<>();
+                hashMap.put("Id","座號："+String.format("%02d",i+1)); // String.format("%02d",i+1)是讓字串補零的方法
+                hashMap.put("Sub1",String.valueOf(new Random().nextInt(80) + 20));
+                hashMap.put("Sub2",String.valueOf(new Random().nextInt(80) + 20));
+                hashMap.put("Avg",String.valueOf(
+                        (Integer.parseInt(hashMap.get("Sub1"))
+                                +Integer.parseInt(hashMap.get("Sub2")))/2));
+                arrayList.add(hashMap);
+            }
+        }
 
         /*
         Adapter 可寫成內部類別 也可獨立一個Class檔(StudentAdapter.java)
