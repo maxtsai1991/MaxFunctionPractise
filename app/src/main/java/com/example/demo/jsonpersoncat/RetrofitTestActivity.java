@@ -149,9 +149,9 @@ public class RetrofitTestActivity extends AppCompatActivity {
     }
 
 
-// /*
-// Adapter 可寫成內部類別 也可獨立一個Class檔(RetrofitTestAdapter.java)
-// */
+         /*
+         Adapter 可寫成內部類別 也可獨立一個Class檔(RetrofitTestAdapter.java)
+         */
 //    private static class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>{
 //        private final List<SyncResponse.FoodData> list;
 //
