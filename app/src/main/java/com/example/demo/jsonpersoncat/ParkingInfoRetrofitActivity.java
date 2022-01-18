@@ -28,6 +28,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+/**
+ * 該頁未完成, 因API 會跑到 onFailure 選項
+ */
+
 /*
 使用retrofit 與 API連線
 參考影片處 : https://www.youtube.com/watch?v=v1EcwuYIfFA

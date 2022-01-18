@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.demo.jsonpersoncat.adapters.StudentAdapter;
@@ -41,6 +43,7 @@ import java.util.Random;
     藍：#005CAF
      */
 public class RecyclerViewStudentActivity extends AppCompatActivity {
+    public Button bt_return_home;
     public RecyclerView mRecyclerView;
     public StudentAdapter myStudentAdapter;
     public ArrayList<HashMap<String,String>>arrayList = new ArrayList<>();
@@ -49,6 +52,16 @@ public class RecyclerViewStudentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_student);
+        //返回首頁按鈕
+        bt_return_home = findViewById(R.id.bt_return_home);
+        bt_return_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecyclerViewStudentActivity.this, HomeMainActivity.class);
+                startActivity(intent);
+                RecyclerViewStudentActivity.this.finish();//結束目前 Activity
+            }
+        });
 
         //製造生成假資料 : 迴圈跑30次表示30個學生
         for (int i = 0;i<30;i++){

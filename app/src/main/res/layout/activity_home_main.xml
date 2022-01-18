@@ -20,7 +20,8 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +32,35 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="【場外區】"
+                android:textSize="34sp" />
+
+            <Button
+                android:id="@+id/bt_battery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:text="查看電池資訊" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="轉盤" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="【功能測試區】"
+                android:textSize="34sp" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -59,6 +89,7 @@
                             android:id="@+id/bt_gson_catnum_name_click"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:backgroundTint="#FFB74D"
                             android:text="catclick" />
 
@@ -66,6 +97,7 @@
                             android:id="@+id/bt_Gson_cat_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:backgroundTint="#FFB74D"
                             android:text="catswitch" />
                     </LinearLayout>
@@ -144,7 +176,7 @@
 
             <Button
                 android:id="@+id/bt_todo_To_Json"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4DB6AC"
                 android:onClick="todoToJson"
@@ -152,7 +184,7 @@
 
             <Button
                 android:id="@+id/bt_todoList_To_JsonArray"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4DB6AC"
                 android:onClick="todoListToJsonArray"
@@ -160,7 +192,7 @@
 
             <Button
                 android:id="@+id/bt_user_To_Json"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#4DB6AC"
                 android:onClick="userToJson"
@@ -177,7 +209,7 @@
 
             <Button
                 android:id="@+id/bt_TODO_JSON_TO_TODO_OBJECT"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F06292"
                 android:onClick="todoJsonTotodoObject"
@@ -185,7 +217,7 @@
 
             <Button
                 android:id="@+id/bt_TODO_JSONARRAY_TO_OBJECTARRAY"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F06292"
                 android:onClick="todoJsonArrayTotodoArray"
@@ -193,7 +225,7 @@
 
             <Button
                 android:id="@+id/bt_TODO_JSONARRAY_TO_OBJECT_LIST"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F06292"
                 android:onClick="todoJsonArrayTotodoList"
@@ -201,7 +233,7 @@
 
             <Button
                 android:id="@+id/bt_USER_JSON_TO_USER_JAVA_OBJECT"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#F06292"
                 android:onClick="userJsonToUserUserObject"
@@ -214,18 +246,20 @@
                 android:gravity="center_horizontal"
                 android:text="RecycleView"
                 android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/bt_RecyclerView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FF9800"
                 android:text="RecyclerViewTest" />
 
             <Button
                 android:id="@+id/bt_StudentRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FF9800"
                 android:text="studentrecycleview" />
 
             <TextView
@@ -234,12 +268,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="Dialog"
-                android:textSize="20sp" />
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/bt_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#F44336"
                 android:text="Dialog"
                 android:textSize="16sp" />
 
@@ -248,12 +283,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Firebase Crashlytics" />
+                android:text="Firebase Crashlytics"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/crashButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#00BCD4"
                 android:text="Crashlytics Test" />
 
             <TextView
@@ -261,18 +298,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Retrofit 與 API連線 (Recycleview)" />
+                android:text="Retrofit 與 API連線 (Recycleview)"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/bt_Retrofitfood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#03A9F4"
                 android:text="FoodRetrofit" />
 
             <Button
                 android:id="@+id/bt_parking"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#03A9F4"
                 android:text="ParkingInfoRetrofit" />
 
             <TextView
@@ -280,26 +320,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="程式碼筆記" />
+                android:text="程式碼筆記"
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/bt_code_notes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#673AB7"
                 android:text="GO IN" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="電池" />
-
-            <Button
-                android:id="@+id/bt_battery"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="查看電池資訊" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -307,12 +336,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Room and Stetho"
-                android:textSize="16sp" />
+                android:textSize="34sp" />
 
             <Button
                 android:id="@+id/bt_room_stetho"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#8BC34A"
                 android:text="Room and Stetho" />
 
         </LinearLayout>
