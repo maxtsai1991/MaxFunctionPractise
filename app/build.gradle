@@ -88,10 +88,21 @@ dependencies {
     implementation "androidx.room:room-paging:2.4.0"
 
     // Retrofit (connect API network kit)
-    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    // okHttp
     implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+
+    // Retrofit 2.9
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // Convert Google Json（Convert the result to Model）
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    // Retrofit CallAdapter convert to RxJava
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    // RxAndroid 3.0
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 }

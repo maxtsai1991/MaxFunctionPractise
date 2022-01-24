@@ -21,7 +21,7 @@ import java.util.List;
 public class HomeMainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private String intent_return_url = "https://xnfood.com.tw/android-intent-bundle/#skill_01";
-    private Button bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
+    private Button bt_mvvm_test1,bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
 
 
     @Override
@@ -43,6 +43,7 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_room_stetho = findViewById(R.id.bt_room_stetho);
         bt_parking = findViewById(R.id.bt_parking);
         bt_StudentRecyclerView = findViewById(R.id.bt_StudentRecyclerView);
+        bt_mvvm_test1 = findViewById(R.id.bt_mvvm_test1);
 
         initView();
 
@@ -177,6 +178,15 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_room_stetho.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeMainActivity.this, RoomStethoActivity.class);
+                startActivity(intent);
+                HomeMainActivity.this.finish();//結束目前 Activity
+            }
+        });
+
+        //MVVM(RxJava Retrofit OkHttp)
+        bt_mvvm_test1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeMainActivity.this, MvvmTest1MainActivity.class);
                 startActivity(intent);
                 HomeMainActivity.this.finish();//結束目前 Activity
             }
