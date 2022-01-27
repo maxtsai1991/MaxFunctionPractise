@@ -347,7 +347,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="MVVM(RxJava Retrofit OkHttp)"
+                android:text="MVVM Test(RxJava Retrofit OkHttp)"
                 android:textSize="24sp"
                 android:gravity="center"/>
             <Button
