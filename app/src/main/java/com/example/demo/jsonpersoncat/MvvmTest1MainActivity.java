@@ -13,7 +13,7 @@ import com.example.demo.jsonpersoncat.mvvmtest1.Test1MainViewModel;
 public class MvvmTest1MainActivity extends AppCompatActivity {
     private ActivityMvvmTest1MainBinding activityMvvmTest1MainBinding;
     private Test1MainViewModel  test1MainViewModel;
-
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
