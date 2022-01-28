@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -25,6 +28,10 @@ public class TibameTest1Activity extends AppCompatActivity {
     private AutoCompleteTextView acTextView;
     private Button button;
     private TextView tvResult;
+    private ProgressBar progressBar1;
+    private SeekBar seekBar;
+    private TextView textView1, textView2;
+    private RatingBar ratingBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +43,10 @@ public class TibameTest1Activity extends AppCompatActivity {
         handleBtReturnHome();
         handleAutoCompleteTextView();
         handleButton();
+
+        handleProgressBar();
+        handleSeekBar();
+        handleRatingBar();
     }
 
     /**
@@ -48,6 +59,12 @@ public class TibameTest1Activity extends AppCompatActivity {
         acTextView = findViewById(R.id.acTextView);
         button = findViewById(R.id.button);
         tvResult = findViewById(R.id.tvResult);
+
+        progressBar1 = findViewById(R.id.progressBar1);
+        seekBar = findViewById(R.id.seekBar);
+        textView1 = findViewById(R.id.textView1);
+        textView2 = findViewById(R.id.textView2);
+        ratingBar = findViewById(R.id.ratingBar);
     }
 
     private void handleBtReturnHome() {
@@ -109,5 +126,63 @@ public class TibameTest1Activity extends AppCompatActivity {
         });
     }
 
+    /**
+     * ProgressBar相關處理
+     */
+    private void handleProgressBar() {
+        new Thread(() -> {
+            final int max = progressBar1.getMax();
+            int progress;
+            while ((progress = progressBar1.getProgress()) < max) {
+                progressBar1.setProgress(progress + 1);
+                try {
+                    Thread.sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    /**
+     * SeekBar相關處理
+     */
+    private void handleSeekBar() {
+        // 將SeekBar的預設值設定為TextView的文字大小
+        final float sizePx = textView1.getTextSize();
+        // textView.getTextSize()取得的大小之單位為px，須手動轉換成sp
+        final float sizeSp = sizePx / getResources().getDisplayMetrics().scaledDensity;
+        seekBar.setProgress((int) sizeSp);
+
+        // 註冊拖曳條改變監聽器
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            // 當數值改變時，自動被呼叫
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // 將TextView的文字大小設定為當前數值
+                textView1.setTextSize(progress);
+            }
+
+            // 當開始改變拖曳條(被按住)時，自動被呼叫
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            // 當停止改變拖曳條(被放開)時，自動被呼叫
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+    }
+
+    /**
+     * RatingBar相關處理
+     */
+    private void handleRatingBar() {
+        // 評分條改變監聽器
+        ratingBar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+            textView2.setText(rating + " 分");
+        });
+    }
 
 }

@@ -67,4 +67,6 @@
     <string name="textPasswordRequired">Password is required</string>
     <string name="textCountryRequired">Country is required</string>
 
+    <string name="textAndroid">Android</string>
+
 </resources>
