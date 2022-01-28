@@ -2,27 +2,19 @@ package com.example.demo.jsonpersoncat;
 
 
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.demo.jsonpersoncat.adapters.RetrofitTestAdapter;
 import com.example.demo.jsonpersoncat.data.SyncRequest;
 import com.example.demo.jsonpersoncat.data.SyncResponse;
-import com.example.demo.jsonpersoncat.obj.Book;
 import com.google.gson.Gson;
 
 import java.io.UnsupportedEncodingException;
@@ -69,7 +61,7 @@ public class RetrofitTestActivity extends AppCompatActivity {
             }
         });
 
-        bt_return = findViewById(R.id.bt_return);
+        bt_return = findViewById(R.id.bt_tibame_return_home);
         bt_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

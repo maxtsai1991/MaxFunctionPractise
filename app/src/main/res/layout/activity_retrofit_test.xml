@@ -8,7 +8,7 @@
     tools:context=".RetrofitTestActivity">
 
     <Button
-        android:id="@+id/bt_return"
+        android:id="@+id/bt_tibame_return_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RETURNHOME" />

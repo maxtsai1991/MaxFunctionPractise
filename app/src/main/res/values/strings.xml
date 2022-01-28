@@ -58,4 +58,13 @@
 
     <string name="start">Start</string>
 
+    <string name="textUsername">Username</string>
+    <string name="textPassword">Password</string>
+    <string name="textCountryHint">Enter your country</string>
+    <string name="textSubmit">Submit</string>
+    <string name="textCountry">Country</string>
+    <string name="textUsernameRequired">Username is required</string>
+    <string name="textPasswordRequired">Password is required</string>
+    <string name="textCountryRequired">Country is required</string>
+
 </resources>

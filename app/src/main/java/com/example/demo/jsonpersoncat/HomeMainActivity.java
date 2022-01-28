@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import com.example.demo.jsonpersoncat.api.MyApi;
@@ -21,14 +24,15 @@ import java.util.List;
 public class HomeMainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private String intent_return_url = "https://xnfood.com.tw/android-intent-bundle/#skill_01";
-    private Button bt_mvvm_test1,bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
-
+    private Button bt_tibame1,bt_tibame2,bt_tibame3,bt_mvvm_test1,bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
+    private WebView webView;
+    private String roomtourUrl = "https://www.youtube.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_main);
-
+        webView = findViewById(R.id.webView);
         bt_json_catnum_name_click = findViewById(R.id.bt_json_catnum_name_click);
         bt_json_cat_switch = findViewById(R.id.bt_json_cat_switch);
         bt_gson_catnum_name_click = findViewById(R.id.bt_gson_catnum_name_click);
@@ -44,12 +48,41 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_parking = findViewById(R.id.bt_parking);
         bt_StudentRecyclerView = findViewById(R.id.bt_StudentRecyclerView);
         bt_mvvm_test1 = findViewById(R.id.bt_mvvm_test1);
+        bt_tibame1 = findViewById(R.id.bt_tibame1);
+        bt_tibame2 = findViewById(R.id.bt_tibame2);
+        bt_tibame3 = findViewById(R.id.bt_tibame3);
 
         initView();
-
+        handleWebView();
     }
 
+    private void handleWebView() {
+        // 啟用JavaScript
+        webView.getSettings().setJavaScriptEnabled(true);
 
+        // 載入網址
+        webView.loadUrl(roomtourUrl);
+
+        // 使用自訂的WebView來處理請求
+        /**
+         * 若沒有覆寫shouldOverrideUrlLoading()，並回傳false，
+         * 使用者點擊任何連結，會使用裝置內建的瀏覽器來開啟
+         */
+        webView.setWebViewClient(new WebViewClient() {
+
+            /** API 24-使用  */
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+
+            /** API 24(+使用  */
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return false;
+            }
+        });
+    }
 
 
     private void initView() {
@@ -68,6 +101,7 @@ public class HomeMainActivity extends AppCompatActivity {
                 HomeMainActivity.this.finish();//結束目前 Activity
             }
         });
+
         bt_json_cat_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +110,7 @@ public class HomeMainActivity extends AppCompatActivity {
                 HomeMainActivity.this.finish();//結束目前 Activity
             }
         });
+
         bt_gson_catnum_name_click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +119,7 @@ public class HomeMainActivity extends AppCompatActivity {
                 HomeMainActivity.this.finish();//結束目前 Activity
             }
         });
+
         bt_Gson_cat_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,6 +223,15 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_mvvm_test1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeMainActivity.this, MvvmTest1MainActivity.class);
+                startActivity(intent);
+                HomeMainActivity.this.finish();//結束目前 Activity
+            }
+        });
+
+        //Tibame Test1
+        bt_tibame1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeMainActivity.this, TibameTest1Activity.class);
                 startActivity(intent);
                 HomeMainActivity.this.finish();//結束目前 Activity
             }

@@ -17,15 +17,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_toolbar">
+
+    </WebView>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="【功能測試區】"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="370dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/textView18">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,34 +54,12 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="【場外區】"
-                android:textSize="34sp" />
-
             <Button
                 android:id="@+id/bt_battery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#4CAF50"
                 android:text="查看電池資訊" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="轉盤" />
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="【功能測試區】"
-                android:textSize="34sp" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -73,8 +72,9 @@
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
                         android:text="GSON"
                         android:textColor="#000000"
                         android:textSize="20sp" />
@@ -82,6 +82,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal">
 
@@ -110,8 +111,9 @@
                     <TextView
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
                         android:text="JSON"
                         android:textColor="#000000"
                         android:textSize="20sp" />
@@ -120,6 +122,7 @@
                         android:id="@+id/linearLayout2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal">
 
@@ -127,6 +130,7 @@
                             android:id="@+id/bt_json_catnum_name_click"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:backgroundTint="#9575CD"
                             android:text="catclick" />
 
@@ -134,6 +138,7 @@
                             android:id="@+id/bt_json_cat_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:backgroundTint="#9575CD"
                             android:text="catswitch" />
                     </LinearLayout>
@@ -344,18 +349,54 @@
                 android:layout_height="wrap_content"
                 android:background="#8BC34A"
                 android:text="Room and Stetho" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="MVVM Test(RxJava Retrofit OkHttp)"
-                android:textSize="24sp"
-                android:gravity="center"/>
+                android:textSize="24sp" />
+
             <Button
                 android:id="@+id/bt_mvvm_test1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#8BC34A"
                 android:text="MVVM(RxJava Retrofit OkHttp)" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Tibame"
+                android:textSize="34sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_tibame1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ch2" />
+
+                <Button
+                    android:id="@+id/bt_tibame2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/bt_tibame3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+            </LinearLayout>
 
 
         </LinearLayout>
