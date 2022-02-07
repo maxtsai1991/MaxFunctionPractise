@@ -221,6 +221,40 @@
                     android:textSize="24sp" />
             </LinearLayout>
 
+            <!-- 使用自訂元件 -->
+            <LinearLayout
+                android:id="@+id/linearLayout4444"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/textLeftSign" />
+
+                <Button
+                    android:id="@+id/btRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/textRightSign" />
+
+                <com.example.demo.jsonpersoncat.MyView
+                    android:id="@+id/myView"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4444" />
+            </LinearLayout>
+
         </LinearLayout>
 
 

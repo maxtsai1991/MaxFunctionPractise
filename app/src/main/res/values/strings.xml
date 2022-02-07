@@ -69,4 +69,7 @@
 
     <string name="textAndroid">Android</string>
 
+    <string name="textLeftSign">←</string>
+    <string name="textRightSign">→</string>
+
 </resources>

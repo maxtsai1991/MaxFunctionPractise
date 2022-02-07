@@ -32,6 +32,11 @@ public class TibameTest1Activity extends AppCompatActivity {
     private SeekBar seekBar;
     private TextView textView1, textView2;
     private RatingBar ratingBar;
+
+    private Button btLeft, btRight;
+    private MyView myView;
+    // dir: -1表示向左，1表示向右
+    private int dir = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,8 @@ public class TibameTest1Activity extends AppCompatActivity {
         handleProgressBar();
         handleSeekBar();
         handleRatingBar();
+
+        handleButtons();
     }
 
     /**
@@ -65,6 +72,10 @@ public class TibameTest1Activity extends AppCompatActivity {
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
         ratingBar = findViewById(R.id.ratingBar);
+
+        btLeft = findViewById(R.id.btLeft);
+        btRight = findViewById(R.id.btRight);
+        myView = findViewById(R.id.myView);
     }
 
     private void handleBtReturnHome() {
@@ -183,6 +194,35 @@ public class TibameTest1Activity extends AppCompatActivity {
         ratingBar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
             textView2.setText(rating + " 分");
         });
+    }
+
+    /**
+     * Button相關處理
+     */
+    private void handleButtons() {
+        // 向左按鈕註冊監聽器
+        btLeft.setOnClickListener(view -> {
+            dir = -1;
+            changeMyView();
+        });
+
+        // 向右按鈕註冊監聽器
+        btRight.setOnClickListener(view -> {
+            dir = 1;
+            changeMyView();
+        });
+    }
+
+    /**
+     * 改變MyView的外觀
+     */
+    private void changeMyView() {
+        float offset = myView.getOffset();
+        offset += dir * 10;
+        myView.setOffset(offset);
+
+        // 重繪元件外觀
+        myView.invalidate();
     }
 
 }
