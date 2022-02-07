@@ -384,11 +384,11 @@
                     android:text="ch2" />
 
                 <Button
-                    android:id="@+id/bt_tibame2"
+                    android:id="@+id/bt_livedata"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button" />
+                    android:text="生命週期測試" />
 
                 <Button
                     android:id="@+id/bt_tibame3"

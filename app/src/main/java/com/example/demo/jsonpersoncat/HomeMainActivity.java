@@ -22,16 +22,40 @@ import java.util.Arrays;
 import java.util.List;
 
 public class HomeMainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "Lifecycle_Test";
     private String intent_return_url = "https://xnfood.com.tw/android-intent-bundle/#skill_01";
-    private Button bt_tibame1,bt_tibame2,bt_tibame3,bt_mvvm_test1,bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
+    private Button bt_tibame1,bt_livedata,bt_tibame3,bt_mvvm_test1,bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
     private WebView webView;
     private String roomtourUrl = "https://www.youtube.com/";
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume: ");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_main);
+
+        /*
+        用LOG觀察生命週期, info , 搜尋TAG的字串
+        https://juejin.cn/post/6893870636733890574
+        1、生命週期擁有者使用getLifecycle()獲取Lifecycle實例，然後代用addObserve()添加觀察者；
+        2、觀察者實現LifecycleObserver，方法上使用OnLifecycleEvent註解關注對應生命週期，生命週期觸發時就會執行對應方法；
+         */
+        getLifecycle().addObserver(new MyObserver());
+        Log.i(TAG, "onCreate:  ");
+
+
+
         webView = findViewById(R.id.webView);
         bt_json_catnum_name_click = findViewById(R.id.bt_json_catnum_name_click);
         bt_json_cat_switch = findViewById(R.id.bt_json_cat_switch);
@@ -49,7 +73,7 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_StudentRecyclerView = findViewById(R.id.bt_StudentRecyclerView);
         bt_mvvm_test1 = findViewById(R.id.bt_mvvm_test1);
         bt_tibame1 = findViewById(R.id.bt_tibame1);
-        bt_tibame2 = findViewById(R.id.bt_tibame2);
+        bt_livedata = findViewById(R.id.bt_livedata);
         bt_tibame3 = findViewById(R.id.bt_tibame3);
 
         initView();
@@ -232,6 +256,15 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_tibame1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeMainActivity.this, TibameTest1Activity.class);
+                startActivity(intent);
+                HomeMainActivity.this.finish();//結束目前 Activity
+            }
+        });
+
+        //測試生命週期
+        bt_livedata.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeMainActivity.this, LiveDataTestActivity.class);
                 startActivity(intent);
                 HomeMainActivity.this.finish();//結束目前 Activity
             }
