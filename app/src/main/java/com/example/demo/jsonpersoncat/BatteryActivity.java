@@ -18,7 +18,6 @@ import android.widget.TextView;
 public class BatteryActivity extends AppCompatActivity {
     private TextView tvBatterResult;
     private Button bt_battery_return;
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
