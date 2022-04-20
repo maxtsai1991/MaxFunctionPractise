@@ -24,7 +24,7 @@ import java.util.List;
 public class HomeMainActivity extends AppCompatActivity {
     private static final String TAG = "Lifecycle_Test";
     private String intent_return_url = "https://xnfood.com.tw/android-intent-bundle/#skill_01";
-    private Button bt_tibame1,bt_livedata,bt_tibame3,bt_mvvm_test1,bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
+    private Button bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
     private WebView webView;
     private String roomtourUrl = "https://www.youtube.com/";
 
@@ -71,10 +71,6 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_room_stetho = findViewById(R.id.bt_room_stetho);
         bt_parking = findViewById(R.id.bt_parking);
         bt_StudentRecyclerView = findViewById(R.id.bt_StudentRecyclerView);
-        bt_mvvm_test1 = findViewById(R.id.bt_mvvm_test1);
-        bt_tibame1 = findViewById(R.id.bt_tibame1);
-        bt_livedata = findViewById(R.id.bt_livedata);
-        bt_tibame3 = findViewById(R.id.bt_tibame3);
 
         initView();
         handleWebView();
@@ -238,33 +234,6 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_room_stetho.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeMainActivity.this, RoomStethoActivity.class);
-                startActivity(intent);
-                HomeMainActivity.this.finish();//結束目前 Activity
-            }
-        });
-
-        //MVVM(RxJava Retrofit OkHttp)
-        bt_mvvm_test1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeMainActivity.this, MvvmTest1MainActivity.class);
-                startActivity(intent);
-                HomeMainActivity.this.finish();//結束目前 Activity
-            }
-        });
-
-        //Tibame Test1
-        bt_tibame1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeMainActivity.this, TibameTest1Activity.class);
-                startActivity(intent);
-                HomeMainActivity.this.finish();//結束目前 Activity
-            }
-        });
-
-        //測試生命週期
-        bt_livedata.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeMainActivity.this, LiveDataTestActivity.class);
                 startActivity(intent);
                 HomeMainActivity.this.finish();//結束目前 Activity
             }

@@ -20,33 +20,22 @@
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="350dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_toolbar">
 
     </WebView>
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="【功能測試區】"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/webView" />
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="400dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18">
+        app:layout_constraintTop_toBottomOf="@+id/webView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -273,6 +262,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="Dialog"
+                android:textColor="#000000"
                 android:textSize="34sp" />
 
             <Button
@@ -289,6 +279,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Firebase Crashlytics"
+                android:textColor="#000000"
                 android:textSize="34sp" />
 
             <Button
@@ -304,6 +295,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Retrofit 與 API連線 (Recycleview)"
+                android:textColor="#000000"
                 android:textSize="34sp" />
 
             <Button
@@ -326,6 +318,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="程式碼筆記"
+                android:textColor="#000000"
                 android:textSize="34sp" />
 
             <Button
@@ -341,6 +334,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Room and Stetho"
+                android:textColor="#000000"
                 android:textSize="34sp" />
 
             <Button
@@ -349,54 +343,6 @@
                 android:layout_height="wrap_content"
                 android:background="#8BC34A"
                 android:text="Room and Stetho" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="MVVM Test(RxJava Retrofit OkHttp)"
-                android:textSize="24sp" />
-
-            <Button
-                android:id="@+id/bt_mvvm_test1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#8BC34A"
-                android:text="MVVM(RxJava Retrofit OkHttp)" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Tibame"
-                android:textSize="34sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/bt_tibame1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="ch2" />
-
-                <Button
-                    android:id="@+id/bt_livedata"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="生命週期測試" />
-
-                <Button
-                    android:id="@+id/bt_tibame3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button" />
-            </LinearLayout>
 
 
         </LinearLayout>
