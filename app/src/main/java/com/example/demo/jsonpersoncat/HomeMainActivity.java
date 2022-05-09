@@ -24,7 +24,7 @@ import java.util.List;
 public class HomeMainActivity extends AppCompatActivity {
     private static final String TAG = "Lifecycle_Test";
     private String intent_return_url = "https://xnfood.com.tw/android-intent-bundle/#skill_01";
-    private Button bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView;
+    private Button bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView,bt_handletest;
     private WebView webView;
     private String roomtourUrl = "https://www.youtube.com/";
 
@@ -71,6 +71,8 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_room_stetho = findViewById(R.id.bt_room_stetho);
         bt_parking = findViewById(R.id.bt_parking);
         bt_StudentRecyclerView = findViewById(R.id.bt_StudentRecyclerView);
+        bt_handletest = findViewById(R.id.bt_handletest);
+
 
         initView();
         handleWebView();
@@ -238,6 +240,16 @@ public class HomeMainActivity extends AppCompatActivity {
                 HomeMainActivity.this.finish();//結束目前 Activity
             }
         });
+
+        // 同步 VS 異步 VS Handle類
+        bt_handletest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeMainActivity.this, HandleActivity.class);
+                startActivity(intent);
+                HomeMainActivity.this.finish();//結束目前 Activity
+            }
+        });
+
 
     }
 
