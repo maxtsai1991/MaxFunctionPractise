@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomeMainActivity">
 
-    <Button
-        android:id="@+id/bt_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#4CAF50"
-        android:text="【Max Project】"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/bt_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#4CAF50"-->
+<!--        android:text="【Max Project】"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <WebView
         android:id="@+id/webView"
@@ -23,7 +23,7 @@
         android:layout_height="380dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
     </WebView>
 
@@ -333,16 +333,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Room and Stetho"
+                android:text="New Start"
                 android:textColor="#000000"
                 android:textSize="34sp" />
-
-            <Button
-                android:id="@+id/bt_room_stetho"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#8BC34A"
-                android:text="Room and Stetho" />
 
             <Button
                 android:id="@+id/bt_handletest"

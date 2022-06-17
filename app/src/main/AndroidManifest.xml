@@ -31,9 +31,6 @@
             android:name=".ParkingInfoRetrofitActivity"
             android:exported="false" />
         <activity
-            android:name=".RoomStethoActivity"
-            android:exported="false" />
-        <activity
             android:name=".BatteryActivity"
             android:exported="false" />
         <activity

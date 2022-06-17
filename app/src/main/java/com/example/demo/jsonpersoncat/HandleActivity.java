@@ -2,12 +2,16 @@ package com.example.demo.jsonpersoncat;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -83,5 +87,31 @@ public class HandleActivity extends AppCompatActivity {
         result = stringBuilder.toString();
         
         return result;
+    }
+
+    /**
+     * 初始化Toolbar內SearchView的設置
+     * 建立選單(Menu) : https://ithelp.ithome.com.tw/articles/10188217
+     * Android的各種Bar，從ActionBar到CollapsingToolbarLayout :
+     * https://medium.com/evan-android-note/android-%E7%9A%84%E5%90%84%E7%A8%AEbar-%E5%BE%9Eactionbar%E5%88%B0collapsingtoolbarlayout-c95d33640be4
+     * */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // 設置要用哪個menu檔做為選單
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.hometest){
+            Toast.makeText(this, "點選了回首頁", Toast.LENGTH_SHORT).show();
+            Intent intent =new Intent(HandleActivity.this,HomeMainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

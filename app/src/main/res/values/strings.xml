@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">測試功能</string>
+    <string name="app_name">實作功能</string>
     <string name="intent_return_url">https://xnfood.com.tw/android-intent-bundle/#skill_01</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

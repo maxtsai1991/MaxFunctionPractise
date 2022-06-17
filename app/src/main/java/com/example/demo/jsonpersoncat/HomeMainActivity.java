@@ -1,15 +1,20 @@
 package com.example.demo.jsonpersoncat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.demo.jsonpersoncat.api.MyApi;
 import com.example.demo.jsonpersoncat.obj.Todo;
@@ -24,7 +29,7 @@ import java.util.List;
 public class HomeMainActivity extends AppCompatActivity {
     private static final String TAG = "Lifecycle_Test";
     private String intent_return_url = "https://xnfood.com.tw/android-intent-bundle/#skill_01";
-    private Button bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery,bt_room_stetho, bt_parking,bt_StudentRecyclerView,bt_handletest;
+    private Button bt_json_catnum_name_click,bt_json_cat_switch,bt_gson_catnum_name_click,bt_Gson_cat_switch,bt_Relative,bt_RecyclerView,bt_dialog,crashButton,bt_Retrofitfood,bt_code_notes,bt_battery, bt_parking,bt_StudentRecyclerView,bt_handletest;
     private WebView webView;
     private String roomtourUrl = "https://www.youtube.com/";
 
@@ -68,7 +73,6 @@ public class HomeMainActivity extends AppCompatActivity {
         bt_Retrofitfood = findViewById(R.id.bt_Retrofitfood);
         bt_code_notes = findViewById(R.id.bt_code_notes);
         bt_battery = findViewById(R.id.bt_battery);
-        bt_room_stetho = findViewById(R.id.bt_room_stetho);
         bt_parking = findViewById(R.id.bt_parking);
         bt_StudentRecyclerView = findViewById(R.id.bt_StudentRecyclerView);
         bt_handletest = findViewById(R.id.bt_handletest);
@@ -232,15 +236,6 @@ public class HomeMainActivity extends AppCompatActivity {
             }
         });
 
-        //Room & Stetho
-        bt_room_stetho.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeMainActivity.this, RoomStethoActivity.class);
-                startActivity(intent);
-                HomeMainActivity.this.finish();//結束目前 Activity
-            }
-        });
-
         // 同步 VS 異步 VS Handle類
         bt_handletest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -307,6 +302,42 @@ public class HomeMainActivity extends AppCompatActivity {
         Log.i(TAG,"# userJsonToUserUserObject : "+ user.getAddress().getGeo().getLat());
         Log.i(TAG,"# userJsonToUserUserObject : "+ user.getAddress().getGeo().getLng());
 
+    }
+
+    /**初始化Toolbar內SearchView的設置*/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // 設置要用哪個menu檔做為選單
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        androidx.appcompat.widget.SearchView searchView = (androidx.appcompat.widget.SearchView) menuItem.getActionView();
+        /**SearchView設置，以及輸入內容後的行動*/
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                /**調用RecyclerView內的Filter方法*/
+//                mAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.hometest){
+            Toast.makeText(this, "點選了回首頁", Toast.LENGTH_SHORT).show();
+            Intent intent =new Intent(HomeMainActivity.this,HomeMainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
